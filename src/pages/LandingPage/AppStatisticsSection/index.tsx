@@ -7,11 +7,11 @@ import {
   StatisticItem,
   AwardItem,
 } from './styled'
-import CountUp from '@/components/LandingPage/CountUp'
+import CountUp from '@components/LandingPage/CountUp'
+import useScrollFadeIn from '@hooks/useScrollFadeIn'
 import TripleLogo from '@assets/triple2x.png'
 import PlayStoreLogo from '@assets/play-store2x.png'
 import AppStoreLogo from '@assets/badge-apple4x.png'
-import useScrollFadeIn from '@/hooks/useScrollFadeIn'
 
 const AppStatisticsSection = () => {
   const logoProps = useScrollFadeIn(700, 0)
