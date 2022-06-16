@@ -1,3 +1,5 @@
+import { FunctionComponent } from 'react'
+
 import {
   Section,
   SectionLayout,
@@ -9,20 +11,22 @@ import {
   AwardItem,
 } from './styled'
 
+import FadeInContainer from '@components/FadeInContainer'
 import CountUp from '@components/CountUp'
-import withFadeIn from '@components/withFadeIn'
 import TripleLogo from '@assets/triple2x.png'
 import PlayStoreLogo from '@assets/play-store2x.png'
 import AppStoreLogo from '@assets/badge-apple4x.png'
 
-const LogoFadeIn = withFadeIn(() => (
+const LogoElement = (
   <LogoContainer duration={700} delay={0}>
     <img src={TripleLogo} alt="triple app logo" />
     <figcaption>2021년 12월 기준</figcaption>
   </LogoContainer>
-))
+)
 
-const StatisticFadeIn = withFadeIn(() => (
+const LogoFadeIn: FunctionComponent = () => FadeInContainer(LogoElement)
+
+const StatisticElement = (
   <StatisticContainer duration={700} delay={100}>
     <StatisticItem>
       <strong>
@@ -43,9 +47,12 @@ const StatisticFadeIn = withFadeIn(() => (
       의 여행 일정
     </StatisticItem>
   </StatisticContainer>
-))
+)
 
-const AwardFadeIn = withFadeIn(() => (
+const StatisticFadeIn: FunctionComponent = () =>
+  FadeInContainer(StatisticElement)
+
+const AwardElement = (
   <AwardContainer duration={700} delay={200}>
     <AwardItem>
       <img src={PlayStoreLogo} alt="triple playstore icon" />
@@ -62,7 +69,9 @@ const AwardFadeIn = withFadeIn(() => (
       </div>
     </AwardItem>
   </AwardContainer>
-))
+)
+
+const AwardFadeIn: FunctionComponent = () => FadeInContainer(AwardElement)
 
 const AppStatisticsSection = () => {
   return (
