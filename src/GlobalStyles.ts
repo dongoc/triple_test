@@ -1,8 +1,8 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { createGlobalStyle } from 'styled-components'
+import styledReset from 'styled-reset'
 
-export default createGlobalStyle`
-	${reset}
+const GlobalStyles = createGlobalStyle`
+	${styledReset}
 
 	:root {
     --color-white: rgba(255,255,255,1);
@@ -25,4 +25,6 @@ export default createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-`;
+`
+
+export default GlobalStyles

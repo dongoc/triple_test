@@ -1,5 +1,6 @@
-import GlobalStyles from "@/GlobalStyles";
-import LandingPage from "@pages/LandingPage";
+import GlobalStyles from '@/GlobalStyles'
+
+import LandingPage from '@pages/LandingPage'
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <GlobalStyles />
       <LandingPage />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

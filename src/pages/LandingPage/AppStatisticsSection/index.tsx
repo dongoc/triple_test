@@ -1,9 +1,9 @@
-import { SectionContainer, SectionLayout } from "./styled";
+import { SectionContainer, SectionLayout } from './styled'
 
 const AppStatisticsSection = () => (
   <SectionContainer>
-    <SectionLayout></SectionLayout>
+    <SectionLayout />
   </SectionContainer>
-);
+)
 
-export default AppStatisticsSection;
+export default AppStatisticsSection

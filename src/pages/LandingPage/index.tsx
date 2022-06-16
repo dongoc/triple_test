@@ -1,9 +1,9 @@
-import AppStatisticsSection from "./AppStatisticsSection";
+import AppStatisticsSection from './AppStatisticsSection'
 
 const LandingPage = () => (
   <main>
     <AppStatisticsSection />
   </main>
-);
+)
 
-export default LandingPage;
+export default LandingPage
