@@ -1,7 +1,7 @@
 import { MutableRefObject, useEffect, useRef } from 'react'
 
 const useIntersectionObserver = (onIntersect: IntersectionObserverCallback) => {
-  const ref = useRef() as MutableRefObject<HTMLElement>
+  const ref = useRef() as MutableRefObject<HTMLDivElement>
 
   useEffect(() => {
     const { current } = ref

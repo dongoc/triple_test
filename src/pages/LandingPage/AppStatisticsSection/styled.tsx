@@ -6,13 +6,7 @@ export const Section = styled.section`
 `
 
 export const SectionLayout = styled.div`
-  display: grid;
-  grid-template-columns: 400px 417px;
-  grid-template-rows: 148px auto;
-  grid-row-gap: 50px;
-  grid-template-areas:
-    'logo statistic'
-    'logo award';
+  display: flex;
   justify-content: space-between;
   max-width: var(--layout-max-width);
   height: 552px;
@@ -20,7 +14,17 @@ export const SectionLayout = styled.div`
   padding-top: 150px;
 `
 
-export const LogoContainer = styled.div`
+export const FlexBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+`
+
+export const FadeInContainer = styled.div<{ duration: number; delay: number }>`
+  animation: ${(p) => `fadeIn ${p.duration}ms ease-in-out ${p.delay}ms`};
+`
+
+export const LogoContainer = styled(FadeInContainer)`
   grid-area: logo;
 
   & > img {
@@ -35,13 +39,13 @@ export const LogoContainer = styled.div`
   }
 `
 
-export const StatisticContainer = styled.div`
+export const StatisticContainer = styled(FadeInContainer)`
   grid-area: statistic;
   display: grid;
   grid-row-gap: 20px;
 `
 
-export const AwardContainer = styled.div`
+export const AwardContainer = styled(FadeInContainer)`
   grid-area: award;
   display: flex;
   gap: 40px;
@@ -72,8 +76,11 @@ export const AwardItem = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--color-gray800);
+
+    & > p {
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--color-gray800);
+    }
   }
 `

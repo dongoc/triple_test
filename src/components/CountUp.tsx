@@ -1,7 +1,8 @@
-import useIntersectionObserver from '@/hooks/useIntersectionObserver'
 import { useState, useCallback } from 'react'
 
-type CountUpProps = {
+import useIntersectionObserver from '@/hooks/useIntersectionObserver'
+
+interface CountUpProps {
   start?: number
   end: number
   duration: number
@@ -24,11 +25,13 @@ const CountUp = (props: CountUpProps) => {
       const progress = easeOutExpo(++frame / totalFrames)
       setCurrent(end * progress)
 
-      if (frame === totalFrames) clearInterval(timerId)
+      if (frame === totalFrames) {
+        clearInterval(timerId)
+      }
 
       return () => clearInterval(timerId)
     }, frameDuration)
-  }, [start, end, duration])
+  }, [end, duration])
 
   const { ref } = useIntersectionObserver(countUp)
 
