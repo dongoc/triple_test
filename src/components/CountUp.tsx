@@ -1,6 +1,4 @@
-import { useState, useCallback } from 'react'
-
-import useIntersectionObserver from '@/hooks/useIntersectionObserver'
+import { useState, useEffect } from 'react'
 
 interface CountUpProps {
   start?: number
@@ -18,7 +16,7 @@ const CountUp = (props: CountUpProps) => {
   const { start = 0, end, duration } = props
   const [current, setCurrent] = useState<number>(start)
 
-  const countUp = useCallback(() => {
+  useEffect(() => {
     let frame = 0
     const totalFrames = Math.floor(duration / frameDuration)
     const timerId = setInterval(() => {
@@ -31,11 +29,9 @@ const CountUp = (props: CountUpProps) => {
 
       return () => clearInterval(timerId)
     }, frameDuration)
-  }, [end, duration])
+  }, [])
 
-  const { ref } = useIntersectionObserver(countUp)
-
-  return <span ref={ref}>{Math.floor(current)}</span>
+  return <span>{Math.floor(current)}</span>
 }
 
 export default CountUp
