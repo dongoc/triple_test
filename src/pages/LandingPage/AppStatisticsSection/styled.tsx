@@ -1,4 +1,9 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+// const initialFadeIn = css`
+//   transform: translateY(-20px);
+//   opacity: 0;
+// `
 
 export const Section = styled.section`
   background-color: var(--color-white);
@@ -52,7 +57,7 @@ export const Typography1 = styled.div`
   font-size: 36px;
   color: var(--color-gray);
 
-  & > strong {
+  strong {
     font-weight: bold;
   }
 `
