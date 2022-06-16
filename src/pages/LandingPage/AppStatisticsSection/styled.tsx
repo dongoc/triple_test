@@ -1,9 +1,4 @@
-import styled, { css } from 'styled-components'
-
-// const initialFadeIn = css`
-//   transform: translateY(-20px);
-//   opacity: 0;
-// `
+import styled from 'styled-components'
 
 export const Section = styled.section`
   background-color: var(--color-white);
@@ -52,12 +47,33 @@ export const AwardContainer = styled.div`
   gap: 40px;
 `
 
-export const Typography1 = styled.div`
+export const StatisticItem = styled.div`
   height: 36px;
   font-size: 36px;
   color: var(--color-gray);
 
   strong {
     font-weight: bold;
+  }
+`
+
+export const AwardItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 64px;
+
+  & > img {
+    width: 54px;
+    height: 54px;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-gray800);
   }
 `
