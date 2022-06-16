@@ -19,7 +19,8 @@ const GlobalStyles = createGlobalStyle`
     --color-gray800: rgba(58,58,58,0.8);
     --color-gray900: rgba(58,58,58,0.9);
 
-    --desktop-max-width: 1200px;
+    --desktop-min-width: 1200px;
+    --layout-max-width: 1040px;
   }
 
   * {
